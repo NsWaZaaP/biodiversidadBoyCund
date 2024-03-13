@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
 }
 img {
   width: 25rem;
@@ -10,17 +12,45 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(3, 35, 54);
+  border-radius: 0px 0px 24px 24px;
+  border: 1px solid rgba(63, 60, 60, 0.227);
+}
+header a {
+  text-decoration: none;
 }
 nav {
   display: flex;
   justify-content: center;
+  background-color: rgb(3, 35, 54);
+  border-radius: 24px 24px 0px 0px;
 }
-ul {
+h1 {
+  color: whitesmoke;
+  padding: 25px;
+}
+nav ul {
   display: flex;
   justify-content: center;
+  list-style: none;
+  gap: 100px;
+  padding: 12px;
+  background-color: whitesmoke;
+  border-radius: 24px 24px 0px 0px;
 }
-main {
-  /* border: solid 4px pink; */
+nav li {
+  font-weight: bolder;
+  color: rgb(3, 35, 54);
+  font-weight: bolder;
+  transition: 0.5s;
+  padding: 5px 15px;
+}
+nav li:hover {
+  background: rgb(3, 35, 54);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px rgb(3, 35, 54);
+  color: whitesmoke;
+  border-radius: 24px 0px 24px 0;
 }
 .container {
   /* border: solid yellowgreen 3px; */
@@ -56,7 +86,7 @@ main {
 }
 .info_iz_img img {
   width: 400px;
-  height: 200px;
+  height: 225px;
   border-radius: 24px;
 }
 .info_der_img {
@@ -77,11 +107,11 @@ main {
   background-color: whitesmoke;
   display: flex;
   gap: 35px;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
 }
 .viota_general:hover {
   background-color: rgb(3, 35, 54);
-  color: #f3f3f3;
+  color: whitesmoke;
 }
 .cont_topics_img {
   text-align: center;
@@ -92,17 +122,24 @@ main {
 .cont_topics_img button {
   border-radius: 5px;
   padding: 5px;
-  background-color: #fff;
-  border: 2px solid rgba(63, 60, 60, 0.227);
+  background-color: rgb(3, 35, 54);
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
   cursor: pointer;
+  transition: 0.5s;
+  margin-top: 5px;
 }
 .cont_topics_img button:hover {
-  background-color: whitesmoke;
-  border: 2px solid rgb(166, 249, 176);
+  background: whitesmoke;
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px whitesmoke;
+  color: rgb(3, 35, 54);
+  border-radius: 24px 0px 24px 0;
 }
 .cont_topics_parr ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: justify;
 }
 .cont_topics_parr {
@@ -116,11 +153,11 @@ main {
   min-height: 60vh;
   border: 1px solid rgba(63, 60, 60, 0.227);
   border-radius: 24px;
-  background-color: rgb(3, 35, 54);
+  background-color: whitesmoke;
   margin: 20px;
 }
 .card_container:hover {
-  background-color: whitesmoke;
+  background-color: rgb(3, 35, 54);
 }
 .card {
   position: relative;
@@ -139,7 +176,7 @@ main {
 }
 .card .front {
   transform: perspective(600px) rotateY(0deg);
-  box-shadow: 0 5px 10px whitesmoke;
+  box-shadow: 0 0px 35px rgb(3, 35, 54);
 }
 .card .front img {
   position: absolute;
@@ -159,21 +196,21 @@ main {
 }
 .card .back {
   transform: perspective(600px) rotateY(180deg);
-  background: rgb(3, 35, 54);
-  padding: 15px;
-  color: #f3f3f3f3;
+  background: whitesmoke;
+  padding: 5px;
+  color: rgb(3, 35, 54);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
+  text-align: center;  
 }
 .card .back .link {
-  border-top: solid 1px #f3f3f3;
+  border-top: solid 1px rgb(3, 35, 54);
   height: 50px;
   line-height: 50px;
 }
 .card .back .link a {
-  color: #f3f3f3;
+  color: rgb(3, 35, 54);
 }
 .card .back h3 {
   font-size: 30px;
@@ -185,8 +222,95 @@ main {
 }
 .card:hover .front {
   transform: perspective(600px) rotateY(180deg);
+  
 }
 .card:hover .back {
   transform: perspective(600px) rotateY(360deg);
-  box-shadow: 0 5px 10px rgb(3, 35, 54);
+  box-shadow: 0 0 35px whitesmoke;
+}
+/*! boton ir arriba */
+#ir_arriba {
+  position: sticky;
+  width: 50px;
+  height: 50px;
+  top: 90%;
+  left: 90%;
+  transform: rotate(180deg);
+  /* colores y fondos */
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ir_arriba a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 20px;
+}
+#ir_arriba:hover {
+  transition: 300ms;
+  border-radius: 24px 0px 24px 0px;
+  box-shadow: 0 0 35px whitesmoke;
+}
+
+/* responsive */
+
+@media (max-width: 1000px) {
+  #ir_arriba {
+    border-radius: 50%;
+  }
+}
+/*! estilos FOOTER  */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(3, 35, 54);
+  border-radius: 24px 24px 0px 0;
+  color: whitesmoke;
+  font-size: small;
+}
+.principal_footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.contact_izq {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact_der {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.cont_social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cont_social img {
+  width: 30px;
+  border-radius: 10px 0 10px 0px;
+  transition: 0.5s;
+}
+.cont_social img:hover {
+  width: 50px;
+  cursor: pointer;
+}
+.copy {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: small;
 }
